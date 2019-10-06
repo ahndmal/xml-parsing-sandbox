@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.java-course.ru/xml/message"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://www.java-course.ru/xml/message">
+
+    <xsd:complexType name="Message">
+        <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="messagedate" type="xsd:dateTime"/>
+            <xsd:element minOccurs="1" maxOccurs="1" name="surname" type="xsd:string"/>
+            <xsd:element minOccurs="1" maxOccurs="1" name="firstname" type="xsd:string"/>
+            <xsd:element minOccurs="1" maxOccurs="1" name="patronymic" type="xsd:string"/>
+            <xsd:element minOccurs="1" maxOccurs="1" name="postaladdress" type="xsd:string"/>
+            <xsd:element minOccurs="1" maxOccurs="1" name="email" type="xsd:string"/>
+            <xsd:element minOccurs="1" maxOccurs="1" name="department" type="xsd:string"/>
+            <xsd:element minOccurs="1" maxOccurs="1" name="text" type="xsd:string"/>
+            <xsd:element minOccurs="0" maxOccurs="1" name="filename" type="xsd:string"/>
+            <xsd:element name="filedata" type="xsd:base64Binary" minOccurs="0" maxOccurs="1"/>
+        </xsd:all>
+    </xsd:complexType>
+
+    <xsd:element name="message" type="tns:Message"/>
+
+</xsd:schema>
+
+        <?xml version="1.0" encoding="UTF-8"?>
+______________________________________________
+<jc:message xmlns:jc="http://www.java-course.ru/xml/message"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://www.java-course.ru/xml/message Message.xsd">
+
+<messagedate>2013-05-04T18:13:51+04:00</messagedate>
+<surname>Петров</surname>
+<firstname>Семен</firstname>
+<patronymic>Васильевич</patronymic>
+<postaladdress>Санкт-Петербург, ул.Зенитчиков, д.23, кв. 59</postaladdress>
+<email>petrov@pisem.net</email>
+<department>Департамент здравоохранения</department>
+<text>Сообщение, по поводу которого мы должны согласовать наши позиции</text>
+<filename>svid.txt</filename>
+<filedata>0J/RgNC40LzQtdGA</filedata>
+
+</jc:message>
