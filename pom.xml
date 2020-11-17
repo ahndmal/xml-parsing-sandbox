@@ -15,9 +15,6 @@
             <artifactId>xstream</artifactId>
             <version>1.4.14-jdk7</version>
         </dependency>
-
-
-
     </dependencies>
 
 </project>
