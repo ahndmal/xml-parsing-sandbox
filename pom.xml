@@ -13,11 +13,8 @@
         <dependency>
             <groupId>com.thoughtworks.xstream</groupId>
             <artifactId>xstream</artifactId>
-            <version>1.4.13-java7</version>
+            <version>1.4.12-java7</version>
         </dependency>
-
-
-
     </dependencies>
 
 </project>
