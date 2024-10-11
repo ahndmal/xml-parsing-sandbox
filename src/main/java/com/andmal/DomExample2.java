@@ -1,3 +1,5 @@
+package com.andmal;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
@@ -18,32 +20,25 @@ import org.xml.sax.SAXException;
 public class DomExample2 {
     public static void main(String[] args) {
         try {
-            // Создается построитель документа
             DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
-            // Создается дерево DOM документа из файла
+
             Document document = documentBuilder.parse("BookCatalogue.xml");
-            // Вызываем метод для добавления новой книги
+
             addNewBook(document);
-        } catch (ParserConfigurationException ex) {
-            ex.printStackTrace(System.out);
-        } catch (SAXException ex) {
-            ex.printStackTrace(System.out);
-        } catch (IOException ex) {
+        } catch (ParserConfigurationException | IOException | SAXException ex) {
             ex.printStackTrace(System.out);
         }
     }
-    // Функция добавления новой книги и записи результата в файл
+
     private static void addNewBook(Document document) throws TransformerFactoryConfigurationError, DOMException {
-        // Получаем корневой элемент
         Node root = document.getDocumentElement();
-        // Создаем новую книгу по элементам
-        // Сама книга <Book>
+
         Element book = document.createElement("Book");
-        // <Title>
+
         Element title = document.createElement("Title");
-        // Устанавливаем значение текста внутри тега
+
         title.setTextContent("Incredible book about Java");
-        // <Author>
+
         Element author = document.createElement("Author");
         author.setTextContent("Saburov Anton");
         // <Date>
@@ -58,24 +53,22 @@ public class DomExample2 {
         // <Cost>
         Element cost = document.createElement("Cost");
         cost.setTextContent("499");
-        // Устанавливаем атрибут
+
         cost.setAttribute("currency", "RUB");
 
-        // Добавляем внутренние элементы книги в элемент <Book>
         book.appendChild(title);
         book.appendChild(author);
         book.appendChild(date);
         book.appendChild(isbn);
         book.appendChild(publisher);
         book.appendChild(cost);
-        // Добавляем книгу в корневой элемент
+
         root.appendChild(book);
 
-        // Записываем XML в файл
         writeDocument(document);
     }
 
-    // Функция для сохранения DOM в файл
+    // save DOM in a file
     private static void writeDocument(Document document) throws TransformerFactoryConfigurationError {
         try {
             Transformer tr = TransformerFactory.newInstance().newTransformer();

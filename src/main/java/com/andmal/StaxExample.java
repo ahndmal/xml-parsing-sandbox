@@ -1,3 +1,5 @@
+package com.andmal;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import javax.xml.stream.XMLInputFactory;

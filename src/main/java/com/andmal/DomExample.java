@@ -1,3 +1,5 @@
+package com.andmal;
+
 import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -14,18 +16,14 @@ public class DomExample {
     public static void main(String[] args) {
 
         try {
-            // Создается построитель документа
             DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 
-            // Создается дерево DOM документа из файла
             Document document = documentBuilder.parse(XML_NAME);
 
-            // Получаем корневой элемент
             Node root = document.getDocumentElement();
 
             System.out.println("List of books:");
             System.out.println();
-            // Просматриваем все подэлементы корневого - т.е. книги
 
             NodeList books = root.getChildNodes();
 
@@ -33,7 +31,6 @@ public class DomExample {
 
                 Node book = books.item(i);
 
-                // Если нода не текст, то это книга - заходим внутрь
                 if (book.getNodeType() != Node.TEXT_NODE) {
 
                     NodeList bookProps = book.getChildNodes();
@@ -41,7 +38,6 @@ public class DomExample {
                     for(int j = 0; j < bookProps.getLength(); j++) {
 
                         Node bookProp = bookProps.item(j);
-                        // Если нода не текст, то это один из параметров книги - печатаем
 
                         if (bookProp.getNodeType() != Node.TEXT_NODE) {
                             System.out.println(bookProp.getNodeName() + ":" + bookProp.getChildNodes().item(0).getTextContent());
