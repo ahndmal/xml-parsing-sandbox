@@ -1,4 +1,4 @@
-package db;
+package com.andmal.db;
 
 import com.sun.org.apache.xml.internal.security.signature.ObjectContainer;
 import javaonline.xml.beastiehut.db.model.Book;

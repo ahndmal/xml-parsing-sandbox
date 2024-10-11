@@ -1,3 +1,5 @@
+package com.andmal;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -18,15 +20,12 @@ public class StaxWriteExample {
             XMLOutputFactory output = XMLOutputFactory.newInstance();
             XMLStreamWriter writer = output.createXMLStreamWriter(new FileWriter("result.xml"));
 
-            // Открываем XML-документ и Пишем корневой элемент BookCatalogue
             writer.writeStartDocument("1.0");
             writer.writeStartElement("BookCatalogue");
-            // Делаем цикл для книг
+
             for (int i = 0; i < 5; i++) {
-                // Записываем Book
                 writer.writeStartElement("Book");
 
-                // Заполняем все тэги для книги
                 // Title
                 writer.writeStartElement("Title");
                 writer.writeCharacters("Book #" + i);
@@ -53,12 +52,10 @@ public class StaxWriteExample {
                 writer.writeCharacters("" + (i+10));
                 writer.writeEndElement();
 
-                // Закрываем тэг Book
                 writer.writeEndElement();
             }
-            // Закрываем корневой элемент
+
             writer.writeEndElement();
-            // Закрываем XML-документ
             writer.writeEndDocument();
             writer.flush();
         } catch (XMLStreamException | IOException ex) {
