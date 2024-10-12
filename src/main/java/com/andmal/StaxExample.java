@@ -1,15 +1,26 @@
 package com.andmal;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class StaxExample {
 
-    public static void main(String[] args) {
-        final String fileName = "BookCatalogue.xml";
+    public static void parse() throws XMLStreamException, IOException {
+        try (FileInputStream fis = new FileInputStream("test.xml")) {
+            XMLInputFactory xmlInFact = XMLInputFactory.newInstance();
+            XMLStreamReader reader = xmlInFact.createXMLStreamReader(fis);
+            while (reader.hasNext()) {
+                reader.next(); // do something here
+            }
+        }
+    }
+
+    public static void parseOld(String[] args) {
+        final String fileName = "xml/BookCatalogue.xml";
 
         try {
             XMLStreamReader xmlr = XMLInputFactory.newInstance().createXMLStreamReader(fileName, new FileInputStream(fileName));

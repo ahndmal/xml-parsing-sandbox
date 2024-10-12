@@ -1,13 +1,14 @@
+/*
 package com.andmal.db;
 
-import com.sun.org.apache.xml.internal.security.signature.ObjectContainer;
-import javaonline.xml.beastiehut.db.model.Book;
+import com.andmal.db.model.Author;
+import com.andmal.db.model.Book;
 
 import java.io.File;
 
 public class XMLExample3 {
 
-    private static String DB4O_FILE_NAME = "book-3.xml";
+    public static String DB4O_FILE_NAME = "xml/book-3.xml";
 
     private static void setObjects()  {
 
@@ -26,8 +27,8 @@ public class XMLExample3 {
             container.store(book);
 
         } finally  {
-
             container.close();
         }
     }
 }
+*/

@@ -1,12 +1,15 @@
+/*
 package com.andmal.db;
 
-import com.sun.org.apache.xml.internal.security.signature.ObjectContainer;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
 import java.io.FileWriter;
 
-import static com.andmal.db.XMLExample3.DB4O_FILE_NAME;
+
+class Car {
+
+}
 
 public class ExportToXml {
 
@@ -16,9 +19,9 @@ public class ExportToXml {
 
         try  {
 
-            FileWriter xmlFile = new FileWriter(XMLXML_FILE_NAME);
+            FileWriter xmlFile = new FileWriter("DB4O_FILE_NAME");
 
-            ObjectContainer container = Db4o.openFile(DB4O_FILE_NAME);
+            ObjectContainer container = Db4o.openFile("DB4O_FILE_NAME");
 
             try  {
 
@@ -45,3 +48,4 @@ public class ExportToXml {
         }
     }
 }
+*/
