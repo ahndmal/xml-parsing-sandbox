@@ -10,16 +10,14 @@ import javax.xml.validation.Validator;
 import java.io.File;
 import java.io.IOException;
 
-public class XsdValidator
-{
-    public static void main(String[] args)
-    {
+public class XsdValidator {
+
+    public static void main(String[] args) {
         boolean answer = validateXMLSchema("Message.xsd", "Message.xml");
         System.out.println("Result:" + answer);
     }
 
-    public static boolean validateXMLSchema(String xsdPath, String xmlPath)
-    {
+    public static boolean validateXMLSchema(String xsdPath, String xmlPath) {
         try {
             SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
             Schema schema = factory.newSchema(new File(xsdPath));

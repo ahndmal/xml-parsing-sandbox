@@ -1,4 +1,4 @@
-package com.andmal;
+package com.andmal.core;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
