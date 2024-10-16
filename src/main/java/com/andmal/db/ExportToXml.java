@@ -1,3 +1,4 @@
+/*
 package com.andmal.db;
 
 import com.sun.org.apache.xml.internal.security.signature.ObjectContainer;
@@ -6,7 +7,6 @@ import com.thoughtworks.xstream.io.xml.DomDriver;
 
 import java.io.FileWriter;
 
-import static com.andmal.db.XMLExample3.DB4O_FILE_NAME;
 
 public class ExportToXml {
 
@@ -45,3 +45,4 @@ public class ExportToXml {
         }
     }
 }
+*/

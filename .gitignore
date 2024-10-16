@@ -1,6 +1,10 @@
 ### Java template
 # Compiled class file
 *.class
+.settings
+*.iml
+.fleet
+.vscode
 
 # Log file
 *.log
