@@ -1,4 +1,4 @@
-package com.andmal;
+package com.andmal.core;
 
 import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
@@ -11,7 +11,7 @@ import org.xml.sax.SAXException;
 
 public class DomExample {
 
-    private static String XML_NAME ="BookCatalogue.xml";
+    private static String XML_NAME = "xml/BookCatalogue.xml";
 
     public static void main(String[] args) {
 

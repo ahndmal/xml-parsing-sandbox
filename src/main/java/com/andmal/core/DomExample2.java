@@ -1,4 +1,4 @@
-package com.andmal;
+package com.andmal.core;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -22,9 +22,10 @@ public class DomExample2 {
         try {
             DocumentBuilder documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 
-            Document document = documentBuilder.parse("BookCatalogue.xml");
+            Document document = documentBuilder.parse("xml/BookCatalogue.xml");
 
             addNewBook(document);
+
         } catch (ParserConfigurationException | IOException | SAXException ex) {
             ex.printStackTrace(System.out);
         }

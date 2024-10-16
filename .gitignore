@@ -1,5 +1,13 @@
 ### Java template
 # Compiled class file
+
+*.iml
+
+target
+build
+.fleet
+.vscode
+
 *.class
 .settings
 *.iml

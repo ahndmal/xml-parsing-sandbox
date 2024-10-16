@@ -1,5 +1,6 @@
 package com.andmal;
 
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
@@ -7,11 +8,22 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import java.io.File;
+import java.io.IOException;
+
 public class SaxExample {
+
+    public static void parse() throws ParserConfigurationException, SAXException, IOException {
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+        factory.setValidating(true);
+        SAXParser saxParser = factory.newSAXParser();
+        File file = new File("test.xml");
+        saxParser.parse(file, new DefaultHandler());    // specify handler
+    }
 
     public static void main(String args[]) {
 
-        final String fileName = "phonebook.xml";
+        final String fileName = "xml/phonebook.xml";
         try {
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser saxParser = factory.newSAXParser();
